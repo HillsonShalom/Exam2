@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/form.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <div class="flex-center fixed-top">
+            <a href="index.html">Home</a>
+            <a href="index.html">Back to Schedule</a>
+        </div>
+        <div class="header">
+            <h1 id="title">Name of the Training</h1>
+        </div>
+    </header>
+    <!-- body -->
+    <div class="main-container">
+        <div class="cards">
+            <h2>Training Details</h2>
+            <p><b>Date: </b><span id="date"></span></p>
+            <p><b>Instructor: </b><span id="instructor"></span></p>
+            <p><b>Description: </b><span id="description"></span></p>
+            <p><b>Duration: </b><span id="duration"></span></p>
+            <p><b>Equipment: </b><span id="equipment"></span></p>
+        </div>
+        <div class="form-container">
+            <h2>Sign Up For <span id="title2">Name of the Training</span></h2>
+            <form action="" class="form">
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname" class="inp"><br><br>
+                <label for="lname">Last Name:</label><br>
+                <input type="text" id="lname" name="lname" class="inp"><br><br>
+                <label for="id">ID Number:</label><br>
+                <input type="text" id="id" name="id" class="inp"><br><br>
+                <label for="rank">Rank:</label><br>
+                <input type="text" id="rank" name="rank" class="inp"><br><br>
+                <label for="gender">Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="Male"> Male <br>
+                <input type="radio" id="female" name="gender" value="Female"> Female <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="flex-center fixed-bottom">
+            <p>&copy; 2024 Army Training Portal. All rights reserved</p>
+        </div>
+    </footer>
+    <script src="scripts/signup.js"></script>
 </body>
 </html>
+
+

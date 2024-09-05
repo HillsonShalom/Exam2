@@ -37,52 +37,16 @@ let trainints = [
     },
 ];
 
-const date = document.querySelector("#today-date");
-date.innerHTML = `
-    Date: ${new Date().toLocaleDateString()}`
 
-const container = document.querySelector("#trainings");
+console.log(localStorage["training"]);
 
-trainints.forEach((training) => {
-    let newTr = document.createElement("div");
-    newTr.classList.add("training-unit");
+let training = trainints.find((training) => training.title === localStorage["training"]);
+console.log(training);
 
-    let textDiv = document.createElement("div");
-    textDiv.classList.add("training-text");
-    newTr.appendChild(textDiv);
-
-    let data = document.createElement("a");
-    data.onclick = () => redirect(training.title);
-    data.innerText = `
-    ${training.date}
-    ${training.title}
-    `;
-    textDiv.appendChild(data);
-
-    let instructor = document.createElement("p");
-    instructor.innerText = training.instructor;
-    textDiv.appendChild(instructor);
-
-    let type = document.createElement("p");
-    type.innerText = training.type;
-    if (training.type === "Physical") {
-        type.classList.add("type-physical");
-    } else if (training.type === "Tactical") {
-        type.classList.add("type-tactical");
-    } else if (training.type === "Technical") {
-        type.classList.add("type-technical");
-    }
-    type.classList.add("type-training");
-    newTr.appendChild(type);
-
-    container.appendChild(newTr);
-});
-
-function redirect(title) {
-    localStorage.setItem("training", title);
-    window.location.href = "signup.html";
-}
-
-module.exports = {
-    trainints: trainints
-}
+document.querySelector("#date").innerHTML = training.date;
+document.querySelector("#title").innerHTML = training.title;
+document.querySelector("#title2").innerHTML = training.title;
+document.querySelector("#instructor").innerHTML = training.instructor;
+document.querySelector("#description").innerHTML = training.description;
+document.querySelector("#duration").innerHTML = training.duration;
+document.querySelector("#equipment").innerHTML = training.equipment;
