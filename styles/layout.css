@@ -72,6 +72,10 @@ body {
     box-shadow: 5px 5px 5px gray;
 }
 
+.training-unit:hover{
+    background-color: #999999;
+}
+
 .training-container {
     width: 50%;
 
@@ -83,4 +87,24 @@ body {
 .for-centering {
     display: flex;
     justify-content: center;
+}
+
+.type-physical {
+    background-color: indianred;
+}
+.type-tactical {
+    background-color:cornflowerblue;
+}
+.type-technical {
+    background-color:darkkhaki;
+}
+.type-physical, .type-tactical, .type-technical {
+    border-radius: 10px;
+    padding: 5px;
+    width: min-content;
+}
+
+.training-text {
+    display: flex;
+    justify-content: space-between;
 }
