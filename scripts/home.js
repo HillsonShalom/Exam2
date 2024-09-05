@@ -37,7 +37,8 @@ let trainints = [
     },
 ];
 
-const date = document.querySelector("#today-date");
+function initializeComponents() {
+    const date = document.querySelector("#today-date");
 date.innerHTML = `
     Date: ${new Date().toLocaleDateString()}`
 
@@ -77,12 +78,26 @@ trainints.forEach((training) => {
 
     container.appendChild(newTr);
 });
+}
+
+function initializeComponentsSignup() {
+    console.log(localStorage["training"]);
+
+    let training = trainints.find((training) => training.title === localStorage["training"]);
+    console.log(training);
+
+    document.querySelector("#date").innerHTML = training.date;
+    document.querySelector("#title").innerHTML = training.title;
+    document.querySelector("#title2").innerHTML = training.title;
+    document.querySelector("#instructor").innerHTML = training.instructor;
+    document.querySelector("#description").innerHTML = training.description;
+    document.querySelector("#duration").innerHTML = training.duration;
+    document.querySelector("#equipment").innerHTML = training.equipment;
+}
+
 
 function redirect(title) {
     localStorage.setItem("training", title);
     window.location.href = "signup.html";
 }
 
-module.exports = {
-    trainints: trainints
-}
